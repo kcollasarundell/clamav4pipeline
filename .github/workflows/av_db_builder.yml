@@ -3,7 +3,7 @@ name: AV DB Build
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: '30 */12 * * *'
 
