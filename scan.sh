@@ -34,13 +34,7 @@ done
 if [ -n "${SCAN_DIR}" ] && [ -n "${LOG_FILE}" ] ; 
 then
 	echo "Scanning directory $SCAN_DIR"
-	if /usr/bin/clamscan -d /clamavdb -vr ${SCAN_DIR} --log=$LOG_FILE; then
-        	echo "Scan completed, detailed report in $LOG_FILE"
-        	exit 0
-	else
-		echo "Scan detected infected files, see $LOG_FILE for details"
-		exit 1
-	fi
+  /usr/bin/clamscan -d /clamavdb -r ${SCAN_DIR} --log=$LOG_FILE
 else
 	echo "Missing mandatory parameters"
 	exit 1
