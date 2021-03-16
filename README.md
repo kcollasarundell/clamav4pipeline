@@ -65,3 +65,5 @@ clamav_scan:
           path: "av.log"
 ```
 
+
+This repository was forked from [luborpetr](https://github.com/luborpetr) who had done great work on it.
