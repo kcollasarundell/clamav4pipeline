@@ -5,7 +5,7 @@ The `clamav4pipeline` is a command line tool which can be used to run ClamAV ant
 The latest `clamav4pipeline` docker image contains latest virus database that is updated twice a day.
 
 ## Docker Image
-The latest Docker image is located in [Docker Hub](https://hub.docker.com/r/thalesgroup/clamav4pipeline). The image is rebuild and AV DB updated every day at 0:00 UTC and 12:00 UTC.
+The latest Docker image is located in [Docker Hub](https://hub.docker.com/r/kcollasarundell/clamav4pipeline). The image is rebuild and AV DB updated every day at 0:00 UTC and 12:00 UTC.
 Check the last build [here.](https://github.com/luborpetr/clamav4pipeline/actions?query=workflow%3A%22AV+DB+Build%22+event%3Aschedule)
 
 ## Behaviour
@@ -22,7 +22,7 @@ SCAN_DIR=/tmp
 OUTPUT_DIR=/tmp
 docker run -v $SCAN_DIR/:/workdir/:ro \
            -v $OUTPUT_DIR/:/output/:rw \
-           -it --rm thalesgroup/clamav4pipeline:latest \
+           -it --rm kcollasarundell/clamav4pipeline:latest \
            scan.sh -d /workdir -l /output/log
 ```
 ### GitLab CI/CD
@@ -34,7 +34,7 @@ clamav_scan:
   dependencies:
     - install
   image:
-    name: thalesgroup/clamav4pipeline:latest
+    name: kcollasarundell/clamav4pipeline:latest
   only:
     - branches
     - tags
@@ -51,7 +51,7 @@ clamav_scan:
 clamav_scan:
     runs-on: [ubuntu-latest]
     container: 
-      image: thalesgroup/clamav4pipeline:latest
+      image: kcollasarundell/clamav4pipeline:latest
       
     steps:
       - uses: actions/checkout@v1
