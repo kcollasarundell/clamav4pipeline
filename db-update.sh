@@ -8,7 +8,7 @@ function updatedb() {
 }
 
 function check-db-integrity() {
- if [[ -f $DATA_DIR/bytecode.cvd && -f $DATA_DIR/daily.cvd && -f $DATA_DIR/main.cvd ]];then
+ if [[ -f $DATA_DIR/bytecode.cld && -f $DATA_DIR/daily.cld && -f $DATA_DIR/main.cvd ]];then
     echo "AV DB integrity check is fine"
     return 0
  fi
