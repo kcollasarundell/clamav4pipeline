@@ -1,4 +1,4 @@
-![AV DB Build](https://github.com/luborpetr/clamav4pipeline/workflows/AV%20DB%20Build/badge.svg)
+![AV DB Build](https://github.com/kcollasarundell/clamav4pipeline/workflows/AV%20DB%20Build/badge.svg)
 
 # clamav4pipeline
 The `clamav4pipeline` is a command line tool which can be used to run ClamAV antivirus scan on top of specified directory.
@@ -6,7 +6,7 @@ The latest `clamav4pipeline` docker image contains latest virus database that is
 
 ## Docker Image
 The latest Docker image is located in [Docker Hub](https://hub.docker.com/r/kcollasarundell/clamav4pipeline). The image is rebuild and AV DB updated every day at 0:00 UTC and 12:00 UTC.
-Check the last build [here.](https://github.com/luborpetr/clamav4pipeline/actions?query=workflow%3A%22AV+DB+Build%22+event%3Aschedule)
+Check the last build [here.](https://github.com/kcollasarundell/clamav4pipeline/actions?query=workflow%3A%22AV+DB+Build%22+event%3Aschedule)
 
 ## Behaviour
 When the `clamav4pipeline` is executed the scan progress is printed to the standard out.
