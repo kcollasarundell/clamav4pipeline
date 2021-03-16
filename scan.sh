@@ -31,12 +31,12 @@ while getopts ":hd:l:" opt; do
   esac
 done
 
-if [ -n "${SCAN_DIR}" ] && [ -n "${LOG_FILE}" ] ; 
+if [ -z "${SCAN_DIR}" ] && [ -z "${LOG_FILE}" ] ; 
 then
-	echo "Scanning directory $SCAN_DIR"
-  /usr/bin/clamscan -d /clamavdb -r ${SCAN_DIR} --log=$LOG_FILE
-else
 	echo "Missing mandatory parameters"
 	exit 1
 fi
+
+echo "Scanning directory $SCAN_DIR"
+/usr/bin/clamscan -d /clamavdb -r ${SCAN_DIR} --log=$LOG_FILE
 
